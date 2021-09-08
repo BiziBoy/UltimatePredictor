@@ -65,6 +65,7 @@ namespace UltimatePredictor
       this.progressBar1.Name = "progressBar1";
       this.progressBar1.Size = new System.Drawing.Size(396, 96);
       this.progressBar1.TabIndex = 0;
+      this.progressBar1.Click += new System.EventHandler(this.progressBar1_Click);
       // 
       // bPredict1
       // 
@@ -76,6 +77,7 @@ namespace UltimatePredictor
       this.bPredict1.TabIndex = 0;
       this.bPredict1.Text = "PREDICT";
       this.bPredict1.UseVisualStyleBackColor = true;
+      this.bPredict1.Click += new System.EventHandler(this.bPredict1_Click);
       // 
       // Form1
       // 
@@ -83,9 +85,11 @@ namespace UltimatePredictor
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(400, 203);
       this.Controls.Add(this.splitContainer1);
+      this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
       this.MaximizeBox = false;
       this.MinimizeBox = false;
       this.Name = "Form1";
+      this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
       this.Text = "Form1";
       this.splitContainer1.Panel1.ResumeLayout(false);
       this.splitContainer1.Panel2.ResumeLayout(false);
