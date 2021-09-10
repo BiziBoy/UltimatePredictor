@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -18,6 +13,7 @@ namespace UltimatePredictor
     private const string APP_NAME = "ULTIMATE_PREDICTOR";
     private readonly string PREDICTIONS_CONFIG_PATH = $"{Environment.CurrentDirectory}\\predictionsConfig.json";
     private string[] _predictions;
+    Random rand = new Random();
     public Form1()
     {
       InitializeComponent();
@@ -37,11 +33,14 @@ namespace UltimatePredictor
 
           }));
 
-          Thread.Sleep(50);
+          Thread.Sleep(25);
         }
       });
+      var index = rand.Next(_predictions.Length);
 
-      MessageBox.Show("Ты пидор.");
+      var prediction = _predictions[index];
+      MessageBox.Show(prediction);
+
       progressBar1.Value = 0;
       this.Text = APP_NAME;
       bPredict1.Enabled = true;
@@ -85,7 +84,15 @@ namespace UltimatePredictor
       }
       finally
       {
-
+        if (_predictions == null)
+        {
+          Close();
+        }
+        else if (_predictions.Length == 0)
+        {
+          MessageBox.Show("Предсказания закончились");
+          Close();
+        }
       }
 
     }
