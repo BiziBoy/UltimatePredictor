@@ -29,6 +29,7 @@ namespace UltimatePredictor
     /// </summary>
     private void InitializeComponent()
     {
+      System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
       this.splitContainer1 = new System.Windows.Forms.SplitContainer();
       this.progressBar1 = new System.Windows.Forms.ProgressBar();
       this.bPredict1 = new System.Windows.Forms.Button();
@@ -86,6 +87,7 @@ namespace UltimatePredictor
       this.ClientSize = new System.Drawing.Size(400, 203);
       this.Controls.Add(this.splitContainer1);
       this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+      this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
       this.MaximizeBox = false;
       this.MinimizeBox = false;
       this.Name = "Form1";
